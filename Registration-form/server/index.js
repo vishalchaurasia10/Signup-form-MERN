@@ -9,10 +9,6 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
 }).catch((e) => {console.log(e);})
 
 const app = express();
-
-app.use(express.json())
-app.use(cookieParser())
-app.use(express.urlencoded({extended: false}))
 app.use(cors(
     {
         origin: ["https://deploy-mern-1whq.vercel.app"].
@@ -20,6 +16,10 @@ app.use(cors(
         credentials: true
     }
     ));
+app.use(express.json())
+app.use(cookieParser())
+app.use(express.urlencoded({extended: false}))
+
 
 app.use("/",require("./routes/authRoute"));
 
