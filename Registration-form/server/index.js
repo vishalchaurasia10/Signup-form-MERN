@@ -15,7 +15,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
 app.use(cors(
     {
-        origin: [""].
+        origin: ["https://deploy-mern-1whq.vercel.app"].
         methods: ["POST" , "GET"],
         credentials: true
     }
